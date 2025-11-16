@@ -1,1 +1,1 @@
-# ARTao - Tinder for Artist's Blocl
+# ARTao - Tinder for Artist's Block
