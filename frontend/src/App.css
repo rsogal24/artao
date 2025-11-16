@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.corvara-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 8rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #1e3c72, #2a5298, #4a90e2, #87ceeb);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 3s ease-in-out infinite;
+  text-align: center;
+  margin: 0;
+  letter-spacing: 0.1em;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #1A237E, #FADADD, #1A237E);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.app-container {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #000000;
+  position: relative;
+}
+
+
+.landing-section {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-container {
+  position: relative;
+  z-index: 10;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  filter: drop-shadow(0 0 30px rgba(26, 35, 126, 0.4)) drop-shadow(0 0 60px rgba(250, 218, 221, 0.2));
+  mix-blend-mode: screen;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.text-container h1 {
+  font-weight: 800;
+}
+
+.fade-in-top {
+  animation: fadeInTop 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FADADD;
+  margin-top: -7.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@keyframes fadeInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px)
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-section {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.section-content {
+  text-align: center;
+  color: white;
+  z-index: 10;
+  padding: 2rem;
+  background-color: transparent;
+  border-radius: 12px;
+}
+
+.section-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #1A237E, #FADADD, #1A237E);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-content p {
+  font-size: 1.5rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Floating caret button */
+.fab-caret {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #1A237E;
+  border: 1px solid rgba(250, 218, 221, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  z-index: 1000;
+  animation: bounceUp 2s infinite;
+}
+
+.fab-caret.open { animation: none; }
+
+.caret-shape {
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 16px solid #FADADD; /* caret pointing up */
+  transform: translateY(-2px);
+}
+
+@keyframes bounceUp {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Icon nav */
+.icon-nav {
+  position: fixed;
+  right: 24px;
+  bottom: 92px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+  z-index: 999;
+}
+
+.icon-nav.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.icon-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(26,35,126,0.9);
+  color: #FADADD;
+  border: 1px solid rgba(250, 218, 221, 0.5);
+  text-decoration: none;
+}
+
+.icon-btn:hover { filter: brightness(1.2); }
+
+.card-showcase-layout {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  gap: 4rem;
+  margin-top: 20rem;
+  margin-left: 2rem;
+}
+
+.showcase-text {
+  flex: 1;
+  color: white;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  text-align: left;
+  padding-top: 0;
+  margin-top: -8rem;
+}
+
+.showcase-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 1rem 0;
+  color: white;
+}
+
+.showcase-subtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin: 0;
+  color: #a0a0a0;
+}
+
+.stepper-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 2rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Wider tutorial stepper wrapper */
+.tutorial-stepper-wrap { 
+  width: min(1200px, 92vw); /* a bit less wide */
+  margin: 0 auto; /* center */
+}
+
+.tutorial-stepper-wrap .outer-container {
+  max-width: 100%;
+  min-height: auto; /* not taller, just wide */
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.tutorial-stepper-wrap .step-indicator-row {
+  padding-left: 0;
+  padding-right: 0;
+  justify-content: space-between; /* spread across width */
+}
+
+.tutorial-stepper-wrap .step-default {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+/* Make indicators and connectors larger (vertical presence) */
+.tutorial-stepper-wrap .step-indicator-inner {
+  width: 4rem; /* normal height, focus on width spread */
+  height: 4rem;
+}
+
+.tutorial-stepper-wrap .step-connector {
+  height: 0.35rem;
+}
+
+.tutorial-stepper-wrap .step-content h3 {
+  font-size: 2rem;
+}
+
+.tutorial-stepper-wrap .step-content p {
+  font-size: 1.125rem;
+}
+
+.stepper-container .outer-container {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.step-content {
+  text-align: left;
+  color: white;
+  padding: 1rem 0;
+}
+
+.step-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #5227FF;
+  font-weight: 600;
+}
+
+.step-content p {
+  font-size: 1rem;
+  opacity: 0.8;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+.showcase-card {
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.showcase-card.back-card {
+  background: #1a1a1a;
+  opacity: 0.8;
+}
+
+.showcase-card.middle-card {
+  background: #1a1a1a;
+  opacity: 0.9;
+}
+
+.showcase-card.front-card {
+  background: linear-gradient(135deg, #1A237E, #FADADD, #1A237E);
+  background-size: 400% 400%;
+  animation: gradient-shift 3s ease-in-out infinite;
+  opacity: 1;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 30px;
+  color: white;
+  font-weight: 600;
+  position: relative;
+}
+
+.card-icon {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.card-text {
+  font-size: 1.2rem;
+  white-space: nowrap;
+}
+
+.card-number {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 0 20px rgba(250, 218, 221, 0.5);
+}
+
+.showcase-card.front-card {
+  background: linear-gradient(135deg, #1A237E, #FADADD, #1A237E);
+  background-size: 400% 400%;
+  animation: gradient-shift 3s ease-in-out infinite;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 30px;
+  color: white;
+  font-weight: 600;
+  position: relative;
+}
+
+.card-icon {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.card-text {
+  font-size: 1.2rem;
+  white-space: nowrap;
+}
+
+.card-number {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 0 20px rgba(250, 218, 221, 0.5);
+}
+
+@media (max-width: 768px) {
+  .card-showcase-layout {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .showcase-title {
+    font-size: 2.5rem;
+  }
+  
+  .showcase-subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+

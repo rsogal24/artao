@@ -1,0 +1,87 @@
+# Environment variables and API keys
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.test
+*.env
+# BUT allow .env.example files (these should be committed)
+!.env.example
+!**/.env.example
+
+# API keys and secrets
+**/secrets.json
+**/config/secrets.*
+**/*.key
+**/*.pem
+**/*.p12
+**/*.pfx
+**/credentials.json
+**/service-account*.json
+
+# Backend Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+backend/fastapi_backend/
+
+# User data and sensitive information (handles, initials, preferences, etc.)
+backend/data/*.json
+backend/data/prefs.json
+backend/data/users.json
+**/data/*.json
+**/data/prefs.json
+**/data/users.json
+# Also ignore any backup or temp versions
+backend/data/*.json.bak
+backend/data/*.json.tmp
+backend/data/*.json~
+# BUT allow .example template files (these should be committed)
+!backend/data/*.json.example
+!**/data/*.json.example
+
+# Frontend
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS
+Thumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# Duplicate/backup pages with personal images
+frontend/src/pages/About.duplicate.tsx
+

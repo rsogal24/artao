@@ -1,0 +1,151 @@
+.pill-search {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pill-search-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 6px 8px;
+  border-radius: 999px;
+  background: #FADADD;
+  border: none;
+  position: relative;
+}
+
+.pill-search-input.open {
+  box-shadow: 0 8px 24px rgba(26, 35, 126, 0.15);
+}
+
+.pill-search-pills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 auto;
+}
+
+.pill-search-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: transparent;
+}
+
+.pill-search-pills input {
+  border: none;
+  outline: none;
+  background: transparent;
+  min-width: 140px;
+  padding: 6px 4px;
+  font-size: 14px;
+  color: #0a0a0a;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #1A237E;
+  border: 1px solid rgba(26, 35, 126, 0.4);
+  color: #FADADD;
+  overflow: hidden;
+}
+
+.pill-label {
+  font-size: 13px;
+  color: #FADADD;
+}
+
+.pill-remove {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: #FADADD;
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 16px;
+  font-size: 12px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.pill-remove:hover {
+  color: #E53935;
+  background: transparent;
+}
+
+.pill-search-toggle {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: #1A237E;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 6px;
+  margin-left: auto;
+}
+
+.pill-search-toggle:hover {
+  color: #E53935;
+}
+
+.pill-search-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  border-radius: 16px;
+  background: #FADADD;
+  border: none;
+  box-shadow: none;
+  padding: 6px;
+  z-index: 20;
+}
+
+
+.pill-search-dropdown.drop-up {
+  top: auto;
+  bottom: calc(100% + 8px);
+}
+
+.pill-search-option {
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #1A237E;
+}
+
+.pill-search-option + .pill-search-option {
+  border-top: 1px solid #1A237E;
+}
+
+.pill-search-option:hover {
+  background: linear-gradient(90deg, #1A237E10, #FADADD33);
+}
+
+.pill-search-empty {
+  padding: 10px 12px;
+  color: #1A237E;
+  font-size: 13px;
+}
+
+

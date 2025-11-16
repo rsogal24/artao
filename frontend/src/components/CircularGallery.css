@@ -1,0 +1,15 @@
+.circular-gallery {
+  width: min(1200px, 92vw);
+  margin: 0 auto; /* center with dock alignment */
+  height: 60vh; /* give it room; parent can override */
+  overflow: hidden;
+  cursor: grab;
+  position: relative;
+  z-index: 1;
+}
+
+.circular-gallery:active {
+  cursor: grabbing;
+}
+
+

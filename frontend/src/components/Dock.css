@@ -1,0 +1,119 @@
+.dock-outer {
+  position: fixed;
+  inset: 0; /* fill screen to center panel */
+  pointer-events: none; /* let only children receive events */
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.dock-panel {
+  position: fixed;
+  bottom: 0.5rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transform: translateX(var(--dock-x-offset, 0px)) translateZ(0);
+  display: flex;
+  align-items: flex-end;
+  width: fit-content;
+  gap: 1rem;
+  border-radius: 1rem;
+  background-color: transparent; /* transparent container */
+  border: 1px solid transparent;
+  padding: 0 0.5rem 0.5rem;
+  z-index: 1100;
+  pointer-events: auto; /* re-enable */
+}
+
+.dock-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #060010;
+  border: 1px solid #222;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  outline: none;
+  vertical-align: bottom;
+}
+
+.dock-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FADADD;
+  width: 100%;
+  height: 100%;
+}
+
+.dock-icon svg { 
+  width: 1.15em; 
+  height: 1.15em; 
+  display: block;
+}
+
+/* bitmap icon scaling */
+.dock-icon img {
+  width: 1.4em;
+  height: 1.4em;
+  object-fit: contain;
+  filter: drop-shadow(0 0 0 rgba(0,0,0,0)); /* keep colors crisp */
+  user-select: none;
+  border-radius: 4px; /* slight rounding to match dock item style */
+  display: block;
+}
+
+.dock-label {
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  width: fit-content;
+  white-space: pre;
+  border-radius: 0.375rem;
+  border: 1px solid #222;
+  background-color: #060010;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.75rem;
+  color: #fff;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 640px) {
+  .dock-panel { gap: 0.5rem; }
+}
+
+/* collapse toggle button: sits inside the dock item (under About) */
+.dock-toggle {
+  position: absolute;
+  bottom: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 20px;
+  border-radius: 999px;
+  background: rgba(6, 0, 16, 0.6);
+  border: 1px solid #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.dock-toggle .chevron {
+  width: 0; height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid #FADADD; /* down chevron by default */
+}
+
+.dock-toggle .chevron.up {
+  border-top: none;
+  border-bottom: 8px solid #FADADD; /* up chevron when collapsed */
+}
+
+
