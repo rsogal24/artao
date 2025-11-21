@@ -7,3 +7,4 @@ ARTao is a web service aimed to help artists select the reference image for thei
 ## Workflow
 
 ## Special Thanks
+I would like to forward a special thanks to Claire Tao for providing me with an inspiration for creating this project. 
